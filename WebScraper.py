@@ -1,9 +1,12 @@
 import requests as rq
+from bs4 import BeautifulSoup as bs
 
 
-def getWebSiteData(link):
+def getRawWebSiteHTML(link):
     req = rq.get(link)
-    print(req.content)
     return req
 
-getWebSiteData("https://geislerc.github.io/")
+
+htmlStuff = getRawWebSiteHTML("https://geislerc.github.io/")
+soup = bs(htmlStuff.content)
+print(soup.prettify())
