@@ -1,7 +1,9 @@
 import requests as rq
 
-req = rq.get("https://geislerc.github.io/")
 
-print(req)
+def getWebSiteData(link):
+    req = rq.get(link)
+    print(req.content)
+    return req
 
-print(req.content)
+getWebSiteData("https://geislerc.github.io/")
