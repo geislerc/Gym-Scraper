@@ -18,12 +18,12 @@ def getStrengthTable(link):
         newList = []
         for item in rows.find_all('td'):
             #print(item.text)
-            newList.append(int(item.text))
+            newList.append(item.text)
         if len(newList) > 0:
             resultList.append(newList)
 
     return resultList
 
 
-strengthTable = getStrengthTable("https://strengthlevel.com/strength-standards/bench-press")
-print(strengthTable)
+# strengthTable = getStrengthTable("https://strengthlevel.com/strength-standards/bench-press")
+# print(strengthTable)
