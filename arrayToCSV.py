@@ -3,7 +3,7 @@ from pathlib import Path
 
 def write2DArrToCSV(startArr: list, name: str, path: str = "") -> str:
     name = "{0}.csv".format(name)
-    if path != "" :
+    if path != "":
         name = path + "/" + name
         directory = Path(name)
         directory.parent.mkdir(parents=True, exist_ok=True)
