@@ -1,20 +1,19 @@
 import csv
+from pathlib import Path
 
-
-# a = [[1,2,3,4],[5,6,7,8]]
-#
-# with open("new_file.csv","w+") as my_csv:
-#     csvWriter = csv.writer(my_csv,delimiter=',')
-#     csvWriter.writerows(a)
-
-def write2DArrToCSV(startArray, name):
-    name = name + ".csv"
+def write2DArrToCSV(startArr: list, name: str, path: str = "") -> str:
+    name = "{0}.csv".format(name)
+    if path != "" :
+        name = path + "/" + name
+        dir = Path(name)
+        dir.parent.mkdir(parents=True, exist_ok=True)
     with open((name), "w+") as my_csv:
         writer = csv.writer(my_csv, delimiter=',')
-        writer.writerows(startArray)
+        writer.writerows(startArr)
     return name
 
 
-# a = [[1,2,3,4],[5,6,7,8]]
+# a = [[1, 2, 3, 4], [5, 6, 7, 8]]
 # filename = "Heck"
-# write2DArrToCSV(a, filename)
+# mypath = "jjj/sd/"
+# write2DArrToCSV(a, filename, mypath)
