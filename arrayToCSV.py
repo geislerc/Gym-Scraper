@@ -5,8 +5,8 @@ def write2DArrToCSV(startArr: list, name: str, path: str = "") -> str:
     name = "{0}.csv".format(name)
     if path != "" :
         name = path + "/" + name
-        dir = Path(name)
-        dir.parent.mkdir(parents=True, exist_ok=True)
+        directory = Path(name)
+        directory.parent.mkdir(parents=True, exist_ok=True)
     with open((name), "w+") as my_csv:
         writer = csv.writer(my_csv, delimiter=',')
         writer.writerows(startArr)
